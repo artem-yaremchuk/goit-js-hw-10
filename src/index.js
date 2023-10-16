@@ -1,6 +1,6 @@
 import { fetchBreeds, fetchCatByBreed } from "./cat-api.js";
 import Notiflix from "notiflix";
-import SlimSelect from "slim-select";
+//import SlimSelect from "slim-select";
 
 const refs = {
   options: document.querySelector(".breed-select"),
@@ -8,6 +8,7 @@ const refs = {
   loader: document.querySelector(".loader"),
   error: document.querySelector(".error"),
 };
+
 
 function showLoader() {
   refs.loader.style.display = "block";
@@ -19,7 +20,7 @@ function showLoader() {
 function hideLoader() {
   refs.loader.style.display = "none";
   refs.options.style.display = "block";
-  refs.list.style.display = "block";
+  refs.list.style.display = "flex";
 }
 
 function showError() {
@@ -77,9 +78,13 @@ function createMarkupOptions(arr) {
 
 function createMarkupList({ breedName, description, temperament, imageUrl }) {
   return `
-      <h2>${breedName}</h2>
-      <p><strong>Description:</strong> ${description}</p>
-      <p><strong>Temperament:</strong> ${temperament}</p>
-      <img src="${imageUrl}" width="100%" height="auto" alt="${breedName}" />
+    <div class="cat-info-photo">
+      <img src="${imageUrl}" alt="${breedName}"  width="600"/>
+    </div>
+    <div class="cat-info-container">
+      <h2 class="cat-info-title">${breedName}</h2>
+      <p class="cat-info-text">Description: <span>${description}</span></p>
+      <p class="cat-info-text">Temperament: <span>${temperament}.</span></p>
+    </div>
         `;
 }
