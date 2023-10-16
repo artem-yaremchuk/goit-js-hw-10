@@ -51,7 +51,8 @@
 
   .cat-info-photo {
     width: 600px;
-    height: 300px;
+    height: 400px;
+    flex-shrink: 0;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -60,20 +61,16 @@
   }
   
   .cat-info-photo:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
 
   .cat-info-photo img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
   }
 
-  .cat-info-container {
-    width: 800px;
-    height: 300px;
-  }
 
   .cat-info-text {
     font-weight: 600;

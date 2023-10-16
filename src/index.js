@@ -79,7 +79,7 @@ function createMarkupOptions(arr) {
 function createMarkupList({ breedName, description, temperament, imageUrl }) {
   return `
     <div class="cat-info-photo">
-      <img src="${imageUrl}" alt="${breedName}"  width="600"/>
+      <img src="${imageUrl}" alt="${breedName}"/>
     </div>
     <div class="cat-info-container">
       <h2 class="cat-info-title">${breedName}</h2>
